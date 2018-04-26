@@ -155,7 +155,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/butao_limpa"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.527" />
 
     <Button
         android:id="@+id/butao_reset"
@@ -304,7 +304,8 @@
         app:layout_constraintRight_toLeftOf="@+id/button_more_base"
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/button_less_c"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="0dp"
+        app:layout_constraintHorizontal_bias="0.714" />
 
     <TextView
         android:id="@+id/label_c"

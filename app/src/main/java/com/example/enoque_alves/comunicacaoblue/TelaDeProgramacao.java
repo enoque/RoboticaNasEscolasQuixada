@@ -56,7 +56,8 @@ public class TelaDeProgramacao extends AppCompatActivity {
         button_more = (ImageButton) findViewById(R.id.telaDeProgramacao_button_more);
         adapter = new ArrayAdapter<String>(TelaDeProgramacao.this, android.R.layout.simple_list_item_1, comandosTela);
         listaComandos.setAdapter(adapter);
-        delay.setText(""+delay);
+        valor.setText("100");
+        delay.setText(""+delayValor);
         abreFecha.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -70,10 +71,11 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     valorPassado = (int) (valorPassado * 0.57)+10;
                     comandos.add("!a" + valorPassado);
                     listaComandos.setAdapter(adapter);
-                    valor.setText("");
+                    //valor.setText("");
                     if (delay.getText().length() > 0){
                         delayValor = Integer.parseInt(delay.getText().toString());
-                        delay.setText("");
+                        Log.i("asd", "delay valor " + delayValor);
+                        //delay.setText("");
                     }
                 }
                 else{
@@ -118,7 +120,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     listaComandos.setAdapter(adapter);
                     if (delay.getText().length() > 0){
                         delayValor = Integer.parseInt(delay.getText().toString());
-                        delay.setText("");
+                        //delay.setText("");
                     }
                 }
             }
@@ -138,7 +140,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
                     listaComandos.setAdapter(adapter);
                     if (delay.getText().length() > 0){
                         delayValor = Integer.parseInt(delay.getText().toString());
-                        delay.setText("");
+                        //delay.setText("");
                     }
                 }
             }
@@ -204,6 +206,9 @@ public class TelaDeProgramacao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enviarDados.enviarVariosComandos(comandos, delayValor);
+                if (delay.getText().length() > 0){
+                    delayValor = Integer.parseInt(delay.getText().toString());
+                }
             }
         });
 
